@@ -14,7 +14,7 @@ pre_time = ""
 i = 0
 while(1):
     if (i+1)%5 == 0:
-        print("已为成功您监控" + str(i+1) +"次")
+        print("已为您成功您监控" + str(i+1) +"次")
     try:
         request = Request(url, headers=firefox_headers)
         html = urlopen(request)
