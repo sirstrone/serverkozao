@@ -5,6 +5,7 @@ import time
 import requests
 import sys
 import random
+import re
 url = "https://app.tonystark.io/helper/api"
 #包装头部
 firefox_headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
@@ -27,16 +28,17 @@ while(1):
         data_json = json.loads(data) #dict
         if pre_time != data_json["time"]:
             print(data_json)
-            pre_time = data_json["time"]
-            api = "{you_api_addition}"
-            title = "口罩抢购通知  " + data_json["desc"]
-            content = "地点" + data_json["amount"] + "\n 链接" + data_json["url"]
-            data = {
-                "text": title,
-                "desp": content
-            }
-            req = requests.post(api, data=data)
-            print("推送成功")
+            if (re.search('北京',data_json["amount"])) != None:
+                pre_time = data_json["time"]
+                api = "{you_api_addition}"
+                title = "口罩抢购通知  " + data_json["desc"]
+                content = "地点" + data_json["amount"] + "\n 链接" + data_json["url"]
+                data = {
+                    "text": title,
+                    "desp": content
+                }
+                req = requests.post(api, data=data)
+                print("推送成功")
     except Exception:
         print("第"+ str(i+1) +"次推送挂掉了")
         i = i - 1
