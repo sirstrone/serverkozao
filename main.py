@@ -39,7 +39,7 @@ while(1):
             req = requests.post(api, data=data)
             print("推送成功")
     except Exception:
-        print("第"+ i +"次推送挂掉了")
+        print("第"+ str(i+1) +"次推送挂掉了")
         i = i - 1
     sleep_time = 10 + int(random.random() * 10)
     time.sleep(sleep_time)
