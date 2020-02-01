@@ -1,5 +1,4 @@
-#by zou
-#2020 ncov
+#2020/1/31
 import json
 from urllib.request import Request, urlopen
 import time
