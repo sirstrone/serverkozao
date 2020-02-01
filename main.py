@@ -28,7 +28,7 @@ while(1):
         data_json = json.loads(data) #dict
         if pre_time != data_json["time"]:
             print(data_json)
-            if (re.search('北京',data_json["amount"])) != None:
+            if (re.search('北京',data_json["amount"])) != None: #更改监视地区
                 pre_time = data_json["time"]
                 api = "{you_api_addition}"
                 title = "口罩抢购通知  " + data_json["desc"]
