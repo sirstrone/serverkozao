@@ -1,4 +1,4 @@
-# serverkozao
+# 口罩补货监视器
 利用Server酱制作的口罩补货微信推送器
 
 在Server酱上面注册一个推送帐号
