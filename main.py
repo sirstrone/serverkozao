@@ -29,7 +29,7 @@ while(1):
         if pre_time != data_json["time"]:
             print(data_json)
             pre_time = data_json["time"]
-            api = "https://sc.ftqq.com/SCU41513T082c76c56ee4f9cdb54d46f40201cd945c3f270ddf80e.send"
+            api = "{you_api_addition}"
             title = "口罩抢购通知  " + data_json["desc"]
             content = "地点" + data_json["amount"] + "\n 链接" + data_json["url"]
             data = {
